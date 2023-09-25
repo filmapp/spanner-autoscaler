@@ -89,6 +89,11 @@ variable "schedule" {
   default = "*/2 * * * *"
 }
 
+variable "time_zone" {
+  type    = string
+  default = "Asia/Tokyo"
+}
+
 variable "units" {
   type        = string
   default     = "PROCESSING_UNITS"

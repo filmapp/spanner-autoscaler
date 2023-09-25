@@ -81,6 +81,7 @@ module "scheduler" {
   scaling_method = var.scaling_method
   location       = var.location
   schedule       = var.schedule
+  time_zone      = var.time_zone
 
   // Example of passing config as json
   // json_config             = base64encode(jsonencode([{
