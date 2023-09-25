@@ -78,3 +78,37 @@ locals {
   # an app_project_id that is different from project_id
   app_project_id = var.app_project_id == "" ? var.project_id : var.app_project_id
 }
+
+variable "location" {
+  type    = string
+  default = "asia-northeast1"
+}
+
+variable "schedule" {
+  type    = string
+  default = "*/2 * * * *"
+}
+
+variable "units" {
+  type        = string
+  default     = "PROCESSING_UNITS"
+  description = "The measure that spanner size units are being specified in either: PROCESSING_UNITS or NODES"
+}
+
+variable "min_size" {
+  type        = number
+  default     = 100
+  description = "Minimum size that the spanner instance can be scaled in to."
+}
+
+variable "max_size" {
+  type        = number
+  default     = 2000
+  description = "Maximum size that the spanner instance can be scaled out to."
+}
+
+variable "scaling_method" {
+  type        = string
+  default     = "LINEAR"
+  description = "Algorithm that should be used to manage the scaling of the spanner instance: STEPWISE, LINEAR, DIRECT"
+}

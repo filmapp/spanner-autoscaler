@@ -75,6 +75,13 @@ module "scheduler" {
   terraform_spanner_state = var.terraform_spanner_state
   spanner_state_name      = var.spanner_state_name
 
+  units          = var.units
+  min_size       = var.min_size
+  max_size       = var.max_size
+  scaling_method = var.scaling_method
+  location       = var.location
+  schedule       = var.schedule
+
   // Example of passing config as json
   // json_config             = base64encode(jsonencode([{
   //   "projectId": "${var.project_id}",
