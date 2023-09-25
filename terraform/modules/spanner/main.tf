@@ -108,7 +108,7 @@ resource "google_spanner_database" "state-database" {
   count = var.terraform_spanner_state ? 1 : 0
 
   instance = var.spanner_state_name
-  name     = "spanner-autoscaler-state"
+  name     = "tf-spanner-autoscaler-state"
   ddl = [
     <<EOT
     CREATE TABLE spannerAutoscaler (
