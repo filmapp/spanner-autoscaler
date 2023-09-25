@@ -63,8 +63,6 @@ resource "google_cloud_scheduler_job" "poller_job" {
     min_backoff_duration = "5s"
   }
 
-  depends_on = [google_app_engine_application.app]
-
   /**
    * Uncomment this stanza if you would prefer to manage the Cloud Scheduler
    * configuration manually following its initial creation, i.e. using the
