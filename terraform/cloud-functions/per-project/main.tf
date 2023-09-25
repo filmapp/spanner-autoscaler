@@ -70,12 +70,13 @@ module "spanner" {
 module "scheduler" {
   source = "../../modules/scheduler"
 
-  project_id              = var.project_id
-  spanner_name            = var.spanner_name
-  pubsub_topic            = module.autoscaler-functions.poller_topic
-  target_pubsub_topic     = module.autoscaler-functions.scaler_topic
-  terraform_spanner_state = var.terraform_spanner_state
-  spanner_state_name      = var.spanner_state_name
+  project_id                  = var.project_id
+  spanner_name                = var.spanner_name
+  pubsub_topic                = module.autoscaler-functions.poller_topic
+  target_pubsub_topic         = module.autoscaler-functions.scaler_topic
+  terraform_spanner_state     = var.terraform_spanner_state
+  spanner_state_name          = var.spanner_state_name
+  spanner_state_database_name = var.spanner_state_database_name
 
   units          = var.units
   min_size       = var.min_size

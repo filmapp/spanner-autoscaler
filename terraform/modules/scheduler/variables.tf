@@ -87,6 +87,11 @@ variable "spanner_state_name" {
   default  = null
 }
 
+variable "spanner_state_database_name" {
+  description = "Name of the Spanner database where the Autoscaler state is stored."
+  type        = string
+}
+
 variable "json_config" {
   type        = string
   default     = ""
