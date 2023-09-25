@@ -30,6 +30,12 @@ variable "terraform_spanner_state" {
   default     = true
 }
 
+variable "terraform_new_spanner_state_instance" {
+  description = "If set to true, Terraform will create a Cloud Spanner DB for state."
+  type        = bool
+  default     = false
+}
+
 variable "spanner_test_processing_units" {
   description = "Default processing units for test Spanner, if created"
   default     = 100
@@ -42,12 +48,12 @@ variable "spanner_state_processing_units" {
 
 variable "spanner_name" {
   description = "Name of the Spanner instance to be autoscaled."
-  type    = string
+  type        = string
 }
 
 variable "spanner_state_name" {
   description = "Name of the Spanner instance where the Autoscaler state is stored."
-  type    = string
+  type        = string
 }
 
 variable "poller_sa_email" {

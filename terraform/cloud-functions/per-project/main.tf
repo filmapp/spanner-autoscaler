@@ -54,15 +54,16 @@ module "firestore" {
 module "spanner" {
   source = "../../modules/spanner"
 
-  terraform_spanner_state        = var.terraform_spanner_state
-  terraform_spanner_test         = var.terraform_spanner_test
-  project_id                     = local.app_project_id
-  spanner_name                   = var.spanner_name
-  spanner_state_name             = var.spanner_state_name
-  spanner_test_processing_units  = var.spanner_test_processing_units
-  spanner_state_processing_units = var.spanner_state_processing_units
-  poller_sa_email                = module.autoscaler-base.poller_sa_email
-  scaler_sa_email                = module.autoscaler-base.scaler_sa_email
+  terraform_spanner_state              = var.terraform_spanner_state
+  terraform_new_spanner_state_instance = var.terraform_new_spanner_state_instance
+  terraform_spanner_test               = var.terraform_spanner_test
+  project_id                           = local.app_project_id
+  spanner_name                         = var.spanner_name
+  spanner_state_name                   = var.spanner_state_name
+  spanner_test_processing_units        = var.spanner_test_processing_units
+  spanner_state_processing_units       = var.spanner_state_processing_units
+  poller_sa_email                      = module.autoscaler-base.poller_sa_email
+  scaler_sa_email                      = module.autoscaler-base.scaler_sa_email
 }
 
 module "scheduler" {

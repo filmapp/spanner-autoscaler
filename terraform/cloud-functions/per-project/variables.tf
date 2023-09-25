@@ -50,6 +50,12 @@ variable "terraform_spanner_state" {
   default     = false
 }
 
+variable "terraform_new_spanner_state_instance" {
+  description = "If set to true, Terraform will create a Cloud Spanner DB for state."
+  type        = bool
+  default     = false
+}
+
 variable "spanner_test_processing_units" {
   description = "Default processing units for test Spanner, if created"
   default     = 100

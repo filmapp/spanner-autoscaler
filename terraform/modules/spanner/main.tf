@@ -94,7 +94,7 @@ resource "google_spanner_instance_iam_member" "scaler_update_capacity_iam" {
 ## If Terraform must create an instance to store the state of the Autoscaler
 ##
 resource "google_spanner_instance" "state_instance" {
-  count = var.terraform_spanner_state ? 1 : 0
+  count = var.terraform_spanner_state && var.terraform_new_spanner_state_instance ? 1 : 0
 
   name         = var.spanner_state_name
   config       = "regional-${var.region}"
