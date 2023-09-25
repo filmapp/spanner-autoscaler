@@ -38,6 +38,11 @@ variable "spanner_state_name" {
   default = "autoscale-test-state"
 }
 
+variable "spanner_state_database_name" {
+  description = "Name of the Spanner database where the Autoscaler state is stored."
+  type        = string
+}
+
 variable "terraform_spanner_test" {
   description = "If set to true, Terraform will create a Cloud Spanner instance and DB for testing."
   type        = bool

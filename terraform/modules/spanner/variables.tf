@@ -56,6 +56,11 @@ variable "spanner_state_name" {
   type        = string
 }
 
+variable "spanner_state_database_name" {
+  description = "Name of the Spanner database where the Autoscaler state is stored."
+  type        = string
+}
+
 variable "poller_sa_email" {
   type = string
 }

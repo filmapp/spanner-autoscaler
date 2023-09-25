@@ -55,6 +55,7 @@ module "spanner" {
   source = "../../modules/spanner"
 
   terraform_spanner_state              = var.terraform_spanner_state
+  spanner_state_database_name          = var.spanner_state_database_name
   terraform_new_spanner_state_instance = var.terraform_new_spanner_state_instance
   terraform_spanner_test               = var.terraform_spanner_test
   project_id                           = local.app_project_id
